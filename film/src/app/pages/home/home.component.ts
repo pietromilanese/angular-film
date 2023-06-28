@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Film } from 'src/app/models/film.model';
 import { ApiService } from 'src/app/service/api.service';
 
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   data: Film[] = [];
   name: string = "";
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private activatedRoute: ActivatedRoute) { }
 
 
   searchByName(name: string) {
@@ -32,8 +33,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.api.getFilmByName('adventure').subscribe((response) => {
-      this.data = response;
+    this.activatedRoute.data.subscribe(({data}) => {
+      this.data = data;
     })
 
   }

@@ -1,7 +1,7 @@
 
 <div>
     <input type="text" [(ngModel)]="name" placeholder="search film...">
-    <button type="button" (click)="searchByName(name)">Search</button>
+    <button type="button" [routerLink]="['/home', name]">Search</button>
 </div>
 
 
