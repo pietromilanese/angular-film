@@ -15,7 +15,7 @@ export class ApiService {
     return this.http.get<Film[]>(`${this.baseUrl}${name}`)
   }
 
-  getFilmById(id: number) {
+  getFilmById(id: string) {
     return this.http.get<FilmDetail>(`https://api.tvmaze.com/shows/${id}`)
   }
 

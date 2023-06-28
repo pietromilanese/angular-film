@@ -16,7 +16,11 @@ const routes: Routes = [
       return inject(ApiService).getFilmByName(route.paramMap.get('query')!)
     }
   } },
-  { path: 'detail/:id', component: DetailComponent },
+  { path: 'detail/:id', component: DetailComponent, resolve: {
+    data: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+      return inject(ApiService).getFilmById(route.paramMap.get('id')!)
+    }
+  } },
   { path: '**', component: HomeComponent }
 ];
 

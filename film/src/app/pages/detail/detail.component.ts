@@ -12,17 +12,15 @@ export class DetailComponent implements OnInit {
 
   detail!: FilmDetail 
 
-  constructor(private api: ApiService, private route: ActivatedRoute){}
+  constructor(private api: ApiService, private activatedRoute: ActivatedRoute){}
 
 ngOnInit(): void {
-  const id = this.route.snapshot.params['id']
+  
   
 
 
-  this.api.getFilmById(id).subscribe((response) => {
-this.detail = response
-
-console.log(this.detail)
+  this.activatedRoute.data.subscribe(({data}) => {
+    this.detail = data;
   })
 }
 
