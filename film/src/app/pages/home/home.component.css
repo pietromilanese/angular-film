@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.element{
+    position: relative;
+}
+
+.element-title{
+    position: absolute;
+    top: 20px;
+}

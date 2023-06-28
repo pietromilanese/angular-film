@@ -1,0 +1,19 @@
+
+<div>
+    <input type="text" [(ngModel)]="name" placeholder="search film...">
+    <button type="button" (click)="searchByName(name)">Search</button>
+</div>
+
+
+
+
+<div class="container">
+    <div *ngFor='let film of data'>
+        <a routerLink="/detail/{{film.show.id}}">
+        <div class="element">
+            <img src="{{film.show.image.medium}}" />
+            <div class="element-title">{{film.show.name}}</div>
+        </div>
+    </a>
+    </div>
+</div>
