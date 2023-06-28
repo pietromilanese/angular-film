@@ -14,21 +14,11 @@ export class HomeComponent implements OnInit {
   data: Film[] = [];
   name: string = "";
 
-  constructor(private api: ApiService, private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
 
-  searchByName(name: string) {
-    if (this.name === '') {
-      alert('please insert a film name!')
-    } else {
-      this.api.getFilmByName(name).subscribe((response) => {
-        this.data = response;
-        console.log(this.data)
 
-      })
-    }
 
-  }
 
 
   ngOnInit(): void {
