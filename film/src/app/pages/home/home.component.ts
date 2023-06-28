@@ -7,36 +7,36 @@ import { ApiService } from 'src/app/service/api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
-  
+export class HomeComponent implements OnInit {
+
 
   data: Film[] = [];
   name: string = "";
-  
-  constructor(private api: ApiService){}
+
+  constructor(private api: ApiService) { }
 
 
   searchByName(name: string) {
-if(this.name === ''){
-  console.log('disabled')
-} else {
-  this.api.getFilmByName(name).subscribe((response) => {
-    this.data =  response;
-    })
-}
+    if (this.name === '') {
+      alert('please insert a film name!')
+    } else {
+      this.api.getFilmByName(name).subscribe((response) => {
+        this.data = response;
+        console.log(this.data)
 
-  }
-
-
-  
-  ngOnInit(): void {
-   
-  this.api.getFilmByName('girls').subscribe((response) => {
-      this.data =  response;
       })
-      
-    
     }
+
   }
+
+
+  ngOnInit(): void {
+
+    this.api.getFilmByName('adventure').subscribe((response) => {
+      this.data = response;
+    })
+
+  }
+}
 
 

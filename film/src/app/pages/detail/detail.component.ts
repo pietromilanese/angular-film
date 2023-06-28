@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class DetailComponent implements OnInit {
 
-  detail: FilmDetail | undefined
+  detail!: FilmDetail 
 
   constructor(private api: ApiService, private route: ActivatedRoute){}
 
