@@ -6,11 +6,7 @@ import { ApiService } from './service/api.service';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
-  { path: 'home', component: HomeComponent, resolve: {
-    data: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
-      return inject(ApiService).getFilmByName('girl')
-    }
-  } },
+  { path: 'home', component: HomeComponent },
   { path: 'home/:query', component: HomeComponent, resolve: {
     data: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
       return inject(ApiService).getFilmByName(route.paramMap.get('query')!)

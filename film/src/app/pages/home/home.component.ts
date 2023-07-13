@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
 
     this.activatedRoute.data.subscribe(({data}) => {
       this.data = data;
+      console.log(this.data)
     })
 
   }

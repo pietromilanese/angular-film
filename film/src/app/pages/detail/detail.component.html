@@ -1,3 +1,5 @@
 <a routerLink="/home">TORNA ALLA HOME</a>
-<p>{{ detail.name }}</p>
-<img src="{{detail.image.original}}">
+<p>{{ detail?.name }}</p>
+
+<img [src]="detail?.image?.original ? detail?.image?.original : './assets/placeholder.png'" />
+

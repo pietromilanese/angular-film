@@ -9,7 +9,7 @@ import { FilmDetail } from 'src/app/models/film.model';
 })
 export class DetailComponent implements OnInit {
 
-  detail!: FilmDetail 
+  detail?: FilmDetail 
 
   constructor( private activatedRoute: ActivatedRoute){}
 

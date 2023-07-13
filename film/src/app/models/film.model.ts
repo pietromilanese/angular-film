@@ -40,7 +40,7 @@ export interface Film {
         },
         "image": {
             "medium": string | null,
-            "original": string
+            "original": string | null
         },
         "summary": string,
         "updated": number,
@@ -59,7 +59,7 @@ export interface FilmDetail {
     id: number,
     name: string,
     image: {
-        original: string
+        original: string | null
     },
     summary: string
 }

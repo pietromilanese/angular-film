@@ -1,5 +1,5 @@
 
-<div>
+<div class="container-input-field">
     <input type="text" [(ngModel)]="name" placeholder="search film...">
     <button type="button" [routerLink]="['/home', name]">Search</button>
 </div>
@@ -8,11 +8,13 @@
 
 
 <div class="container">
-    <div *ngFor='let film of data'>
+    <div *ngFor='let film of data' style="padding: 2px;">
         <a routerLink="/detail/{{film.show.id}}">
         <div class="element">
-            <img src="{{film.show.image.medium}}" />
-            <div class="element-title">{{film.show.name}}</div>
+            <!-- <img src="{{film.show.image.medium}}" /> -->
+            <img [src]="film?.show?.image?.medium ? film.show.image.medium : './assets/placeholder.png'" />
+
+            <div class="element-title"><p>{{film.show.name}}</p></div>
         </div>
     </a>
     </div>
